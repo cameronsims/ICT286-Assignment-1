@@ -64,6 +64,21 @@ class Q4 {
 		}
 	}
 	
+	// Question 4 - Insert Text box
+	static insertTextBox = function() {
+		let e = document.getElementById("student-names-txtbx");
+		
+		if (e) {
+			e.value = "";
+			
+			// For every student...
+			// Insert it into the array 
+			for (let i = 0; i < Q4.students.length; i++) {
+				e.value = e.value + (Q4.students[i] + " ");
+			}
+		}
+	}
+	
 	// Question 4 - Insert from the Element...
 	static insertStudentName = function() {
 		// This is the element(s) that we get the text from.
@@ -81,6 +96,9 @@ class Q4 {
 			
 				// Insert the insert functions
 				Q4.insert(name);
+				
+				// Insert into the text box 
+				Q4.insertTextBox();
 				
 				// Add element to the array
 				Q4.insertElement(name);
