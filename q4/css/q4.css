@@ -1,0 +1,30 @@
+
+.table {
+	margin: 0rem;
+	border: 0.25rem solid black;
+	padding: 1rem;
+	
+	border-spacing: 0rem;
+}
+
+.students-table-header {
+	font-size: 1.5rem;
+}
+
+.table-row {
+	
+}
+
+.table-cell {
+	margin: 0rem;
+	border: 0.2rem solid blue;
+	padding: 1rem;
+}
+
+th.table-cell {
+	background: linear-gradient(cyan 0%, blue 100%);
+}
+
+tr.table-row td.table-cell {
+	border-top: none;
+}

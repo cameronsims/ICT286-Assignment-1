@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>ICT286 - Assignment 1: Question 4</title>
+		
+		<!-- CSS --> 
+		<link rel="stylesheet" href="./css/q4.css">
+		
+		<!-- Javascript -->
+		<script src="./js/q4.js"></script>
+	</head>
+	<body>
+		
+		<h1>ICT286 - Assignment 1: Question 4</h1>
+		
+		<p>
+			Please insert student names in the bottom text box, the text can either be entered by clicking "spacebar" or by clicking the "insert" button on the webpage.
+		</p>
+
+		<form action="/" method="GET">
+			<input name="student-name" type="text" placeholder="Student Name"/>
+		</form>
+		<button onclick="Q4.insertStudentName()">Insert</button>
+	
+		<hr/>
+		
+		<table id="students-table" class="table">
+			<thead>
+				<tr id="students-table-header" class="table-row">
+					<th class="table-cell">Student Name</th>
+				</tr>
+			</thead>
+			
+			<tbody>
+				<!-- Students are inserted here -->
+			</tbody>
+		</table>
+	</body>
+</html>

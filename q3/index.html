@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>ICT286 - Assignment 1: Question 3</title>
+		
+		<!-- Style -->
+		<link rel="stylesheet" href="./css/q3.css"/>
+		
+		<!-- Javascripts -->
+		<script src="./js/date-time.js"></script>
+		<script src="./js/browser.js"></script>
+		<script src="./js/elem-count.js"></script>
+		<script src="./js/q3.js"></script>
+	</head>
+	
+	<body onload="q3_onload()">
+		<h1>ICT286 - Assignment 1: Question 3</h1>
+		
+		<!-- This is the test panel -->
+		<div class="panel">
+			<p>Link to <a href="../q1/index.html">Question 1</a>, this is a HTML Page.          </p>
+			<p>Link to <a href="../q2/app.js"    >Question 2</a>, this is a Javascript Document.</p>
+			<p>Link to <a href="../q3/index.html">Question 3</a>, this is a HTML Page.          </p>
+			<p>Link to <a href="../q4/index.html">Question 4</a>, this is a HTML Page.          </p>
+		</div>
+		
+		<!-- This is a form -->
+		<div class="panel">
+			<form action="/" method="GET">
+				<input type="text"     placeholder="Username"/>
+				<input type="password" placeholder="Password"/>
+				<button>Submit</button>
+			</form>
+			
+			<form action="/" method="GET">
+				<input type="date"/>
+				<input type="time"/>
+				<button>Submit</button>
+			</form>
+		</div>
+		
+		
+		<!--********************************************************
+		 *	                                                       *
+         *       This is where the actual Question starts...       *
+		 *	                                                       *
+		 ********************************************************-->
+		
+		<div class="panel date-time-panel">
+			<span id="day"    class="date date-day"  >Day</span><br/>
+			
+			<span id="date"    class="date date-date" >Date</span> /
+			<span id="month"   class="date date-month">Month</span> /
+			<span id="year"    class="date date-year" >Year</span><br/>
+							   
+			<span id="hour"    class="time time-hr"   >Hour</span> :
+			<span id="minutes" class="time time-min"  >Minutes</span>
+			<span id="AM-PM"   class="time time-am-pm">AM</span><br/>
+			
+			<button onclick="date_getTime()">Refresh Time</button>
+		</div>
+		
+		<div class="panel">
+			<p><a id="id-link" href="."><span id="url">URL</span></a></p>
+			<button onclick="browser_getURL()">Refresh URL</button>
+		</div>
+		
+		<div class="panel">
+			<p><span id="browser-info">Please Enable Javascript</span></p>
+			<button onclick="browser_getBrowser()">Refresh Browser Information</button>
+		</div>
+		
+		<div class="panel">
+			There exists:
+			<ul>
+				<li><span id="form-amount">x</span> form(s)</li>
+				<li><span id="link-amount">y</span> link(s)</li>
+			</ul>
+			<button onclick="q3_getTags()">Refresh Elements</button>
+		</div>
+		
+		
+	</body>
+
+</html>

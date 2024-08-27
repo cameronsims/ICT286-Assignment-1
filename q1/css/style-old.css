@@ -1,0 +1,242 @@
+
+body {
+	font-family: sans-serif;
+	margin: 0rem;
+}
+
+/* Change Colors because they look bad in the HTML */
+
+a, a:link {
+	color: #00ffff;
+}
+
+a:visited {
+	color: #9900ff;
+}
+
+a:hover {
+	color: #55cccc;
+}
+
+a:active {
+	color: #ff9933;
+}
+
+/*******/
+
+div.background-panel {
+	position: fixed;
+	
+	background-image: url("../images/bg.jpg");
+	background-size: cover;
+	background-repeat: none;
+	
+	top: 0rem;
+	left: 0rem;
+	
+	width: 100%;
+	height: 100%;
+	
+	z-index: -999;
+}
+
+header.header-panel {
+	top: 0rem;
+	left: 0rem;
+	
+	position: absolute;
+	
+	font-weight: bold;
+	font-size: 200%;
+	
+	width: 100%;
+	height: 8%;
+
+	border-bottom: 0.25rem black solid;
+	
+	background: rgba(0, 0, 0, 0.8);
+	color: #ffffff;
+}
+
+header.header-panel div.header-panel-name {
+	padding: 1rem;
+}
+
+footer.footer-panel {
+	bottom: 0rem;
+	left: 0rem;
+	
+	height: 7%;
+	width: 100%;
+	
+	border-top: 0.25rem black solid;
+	
+	position: absolute;
+	
+	background: rgba(0,0,0,0.8);
+	color: #ffffff;
+}
+
+footer.footer-panel div.footer-panel-info {
+	padding: 1.5rem;
+}
+
+footer.footer-panel div.footer-panel-info span.date-stamp {
+	float: right;
+}
+
+
+article.content-panel {
+	position: absolute;
+	
+	/* This controls the scroll bar */
+	overflow-x: initial;
+	overflow-y: scroll;
+	
+	top: 10%;
+	left: 2%;
+	
+	width: 70%;
+	height: 77%;
+	
+	margin: 0rem;
+	border: 0.25rem black solid;
+	padding: 1rem;
+	
+	background: rgba(0, 0, 0, 0.8);
+	color: #ffffff;
+}
+
+/* SIDE PANEL STUFF */
+
+aside.side-panel {
+	position: fixed;
+	text-align: center;
+	
+	top: 8%;
+	right: 0rem;
+	
+	border-left: 0.2rem solid black;
+	
+	width: 20%;
+	max-width: 25rem;
+	min-width: 5rem;
+	height: 85%;
+	
+	z-index: 999;
+	
+	background: rgba(0, 0, 0, 0.8);
+}
+
+aside.side-panel > * {
+	width: 100%;
+}
+
+aside.side-panel div.side-panel-content {
+	
+	margin: 0rem;
+	border: 0rem;
+	padding: 0rem;
+}
+
+aside.side-panel div.side-panel-content div.side-panel-element {
+	text-align: center;
+	
+	background: linear-gradient(#7777ff 0%, #5555ff 100%);
+	
+	margin: 1rem;
+	border: 0.2rem solid black;
+	padding: 1rem;
+}
+
+/* LINK STUFF */
+
+aside.side-panel div.side-panel-content a.side-panel-link  {
+	text-decoration: none;
+	font-weight: bold;
+	color: #ffffff;
+}
+
+aside.side-panel div.side-panel-content a.side-panel-link > div.side-panel-element,
+aside.side-panel div.side-panel-content a.side-panel-link > div.side-panel-element:link,
+aside.side-panel div.side-panel-content a.side-panel-link > div.side-panel-element:visited {
+	
+}
+aside.side-panel div.side-panel-content a.side-panel-link > div.side-panel-element:hover  {
+	background: linear-gradient(#6666ee 0%, #2222cc 100%);
+}
+
+aside.side-panel div.side-panel-content a.side-panel-link > div.side-panel-element:active {
+	background: linear-gradient(#ee6666 0%, #cc2222 100%);
+}
+
+
+
+
+
+
+img#face-pic {
+	/*width: 100%;*/
+	border: 0.25rem black solid;
+	border-left-width: 0rem;
+	border-right-width: 0rem;
+	width: 100%;
+	max-width: 25rem;
+	min-width: 5rem;
+}
+
+/****************
+ *              *
+ *    BUTTON    *
+ *              *
+ ****************/
+
+button.btn {
+	border: 0.25rem solid #000000;
+	padding: 1rem;
+	font-weight: bold;
+}
+
+button.btn.btn-good {
+	border-color: #00aa00;
+	background: linear-gradient(#aaffaa 0%, #ddffdd 100%);
+	color: #000000;
+}
+
+button.btn.btn-bad {
+	border-color: #aa0000;
+	background: linear-gradient(#aa0000 0%, #550000 100%);
+	color: #ffffff;
+}
+
+/***************
+ *             *
+ *    TABLE    *
+ *             *
+ ***************/
+table,
+table tbody,
+table tbody tr,
+table tbody tr td,
+table thead tr th {
+	border-collapse: collapse;
+}
+
+table thead tr th {
+	font-size: 2rem;
+	background: linear-gradient(rgba(0, 120, 255, 0.5) 0%, rgba(0, 50, 120, 0.5) 100%);
+}
+
+td, th {
+	margin: 0rem;
+	border: 0.1rem white solid;
+	border-spacing: 0rem;
+	padding: 0.5rem;
+}
+
+td.table-first:nth-child(1) {
+	font-weight: bold;
+}
+tr:nth-child(odd) {
+	background: rgba(0,0,0, 0.5);
+}
