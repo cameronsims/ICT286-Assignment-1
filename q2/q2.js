@@ -112,7 +112,7 @@ function q2_getStudentsByName(students, name) {
 		// If they've got the same name (not-case sensitive)
 		let student = students[i];
 		let stuName = student.name.toLowerCase();
-		if (stuName == lwrName) {
+		if (stuName == lwrName || stuName.includes(lwrName)) {
 			// Add this to the new array 
 			accepted.push( student );
 		}
@@ -184,7 +184,6 @@ function q2_insertStudents_recurse(students, func) {
 			return;
 		}
 		
-		
 		// Function called...
 		let onScore = function(score) {
 			// If end...
@@ -223,10 +222,66 @@ function q2_insertStudents(func) {
 	q2_insertStudents_recurse(students, func);
 }
 
+function q2_getLetterGrade(letter) {
+	const lettr_arr = [ "HD", "D", "C", "P", "N" ];
+	// Get his letter grade.
+	for (let i = 0; i < lettr_arr.length; i++) {
+		if (lettr_arr[i] == letter) {
+			return i;
+		} 
+	}
+	return null;
+}
+
+// This produces a score mark down...
+function q2_scoreBreakdown(students) {
+	// Grade arrays...
+	const lettr_arr = [ "HD", "D", "C", "P", "N" ];
+	
+	// Create the object
+	let freq_perc = [];
+	for (let i = 0; i < lettr_arr.length; i++) {
+		freq_perc.push({
+			letter: lettr_arr[i],
+			frequency: 0,
+			percent: 0
+		});
+	}
+	
+	// For all students add to the array 
+	for (let i = 0; i < students.length; i++) {
+		let student = students[i];
+		let index = q2_getLetterGrade(student.grade);
+		
+		if (index != null) {
+			freq_perc[index].frequency++;
+		}
+	}
+	
+	// Now we've added everything...
+	let n = students.length;
+	
+	// start calculating percentages 
+	for (let i = 0; i < freq_perc.length; i++) {
+		// Calculate the percentages
+		let freq = freq_perc[i].frequency;
+		let share = (freq / n);
+		freq_perc[i].percent = 100.0 * share;
+	}
+	
+	return freq_perc;
+}
+
 // This prints the table for the students and gets lowest
 function q2_produceStudents(students) {
 	// Table
+	console.log("Students:")
 	console.table(students);
+	
+	// Breakdown 
+	let score_breakdown = q2_scoreBreakdown(students);
+	console.log("Score Breakdown:");
+	console.table(score_breakdown);
 	
 	// Get highest scorer
 	let index = q2_getHighestScore(students);
